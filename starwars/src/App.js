@@ -2,6 +2,12 @@ import React, {useState,useEffect} from 'react';
 import './App.css';
 import Character from './components/Character'
 import axios from 'axios'
+import styled, { keyframes }  from 'styled-components'
+
+const StyledButtons = styled.button`
+  padding: 1%;  
+  border-radius: 15px;
+`
 
 const App = () => {
   const [characterId, setCharacterId] = useState(1)
@@ -47,9 +53,11 @@ useEffect(() => {
 // console.log(characters)
   return (
     <div className="App">
-      <Character  characterDetails={characterDetails} characterId={characterId} characterChange={characterChange}/>
-      <button onClick={()=>characterChange('previous')||reset()}>Previous Character</button>
-      <button onClick={()=>characterChange('next')||reset()}>Next Character</button>
+      < Character  characterDetails={characterDetails} characterId={characterId} characterChange={characterChange}/>
+      <div>
+        <StyledButtons onClick={()=>characterChange('previous')||reset()}>Previous Character</StyledButtons>
+        <StyledButtons onClick={()=>characterChange('next')||reset()}>Next Character</StyledButtons>
+      </div>
     </div>
   );
 }

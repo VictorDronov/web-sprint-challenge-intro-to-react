@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { ThemeProvider } from 'styled-components'
 import theme from './theme'
 
 ReactDOM.render(
-    <themeProvider>
+    <ThemeProvider theme={theme}>
         <App />
- </themeProvider>,
+ </ThemeProvider>,
 document.getElementById('root'));
