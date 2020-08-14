@@ -3,10 +3,18 @@ import './App.css';
 import Character from './components/Character'
 import axios from 'axios'
 import styled, { keyframes }  from 'styled-components'
-
+const kf = keyframes`
+100% {
+  opacity: 1;
+  transform: scale(1.1)
+}
+`
 const StyledButtons = styled.button`
-  padding: 1%;  
+  padding: 0.7% 1%;  
   border-radius: 15px;
+  margin: 1%;
+  background-color: lightgrey;
+  border: none;
 `
 
 const App = () => {
